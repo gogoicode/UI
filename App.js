@@ -1,14 +1,16 @@
 const Stack = createNativeStackNavigator();
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from "expo-font";
-import AndroidLarge from "./screens/AndroidLarge";
+import Login from "./screens/Login";
 import GroupComponent from "./components/GroupComponent";
-import AndroidLarge3 from "./screens/AndroidLarge3";
-import AndroidLarge1 from "./screens/AndroidLarge1";
-import AndroidLarge2 from "./screens/AndroidLarge2";
-import AndroidLarge4 from "./screens/AndroidLarge4";
-import Size48Icon from "./components/Size48Icon";
+import PasswordResetPage from "./screens/Forgot_pass";
+import ForgotPasswordPageEmail from "./screens/Email_code";
+import RegistrationComponent from "./screens/Register";
+import ForgotPasswordPagePhone from './screens/Phone_code';
+import SignUpFormContainer from "./components/SignUpFormContainer"; 
+//import Size48Icon from "./components/Size48Icon";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
@@ -36,10 +38,10 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
               name="AndroidLarge"
-              component={AndroidLarge}
+              component={PasswordResetPage} // remane the componentes to retive the pages
               options={{ headerShown: false }}
             />
-            <Stack.Screen
+            {/* <Stack.Screen
               name="AndroidLarge3"
               component={AndroidLarge3}
               options={{ headerShown: false }}
@@ -58,7 +60,7 @@ const App = () => {
               name="AndroidLarge4"
               component={AndroidLarge4}
               options={{ headerShown: false }}
-            />
+            /> */}
           </Stack.Navigator>
         ) : null}
       </NavigationContainer>
